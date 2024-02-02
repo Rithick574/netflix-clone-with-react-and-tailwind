@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Movie from './Movie';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import Youtube from 'react-youtube'
 
 const Row = ({ title, fetchURL, rowID }) => {
   const [movies, setMovies] = useState([]);
@@ -36,6 +37,7 @@ const Row = ({ title, fetchURL, rowID }) => {
         >
           {movies.map((items, id) => (
             <Movie key={id} items={items} />
+            
           ))}
         </div>
         <MdChevronRight
