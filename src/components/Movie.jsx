@@ -60,7 +60,10 @@ const Movie = ({ items }) => {
           <p className="white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center">
             {items?.title}
           </p>
-          <p onClick={saveShow}>
+          <p onClick={(e)=>{
+              e.stopPropagation()
+              saveShow()
+          }}>
             {like ? (
               <FaHeart className="absolute top-4 left-4 text-gray-300" />
             ) : (
@@ -70,7 +73,6 @@ const Movie = ({ items }) => {
         </div>
       </div>
       <TrailerModal visible={isModalOpen} trailer={trailer} onClose={closeModal}/>
-      {/* {isModalOpen && <TrailerModal trailer={trailer} onClose={closeModal} />} */}
     </>
   );
 };
